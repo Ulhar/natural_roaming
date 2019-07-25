@@ -1,6 +1,6 @@
 ![Natural Roaming](menu/header.png)
 
-A sandbox game written in **[Lua][1]**, using the **[Minetest][2]** engine.
+A sandbox game written in **[Lua][]**, using the **[Minetest][]** engine.
 
 # Features
 
@@ -9,9 +9,9 @@ A sandbox game written in **[Lua][1]**, using the **[Minetest][2]** engine.
 
 # Downloads
 
-Right now, the main way to download this game is to download the ZIP from [Github][NR github repo].
-If you know someone who has this game, you can also ask them for a copy.
-(An itch.io page is planned, but not available until this game is ready.)
+Right now, the main way to download this game is to download the ZIP from [Github][NR github repo].  
+If you know someone who has this game, you can also ask them for a copy.  
+(An itch.io page is planned, but not available until this game is ready.)  
 
 [Lua]:            https://lua.org                                     "Lua webpage"
 [Minetest]:       https://minetest.net                                "Minetest webpage"
