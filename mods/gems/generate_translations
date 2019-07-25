@@ -1,0 +1,3 @@
+#! /bin/sh
+
+sudo bash /home/pi/minetest-master/mods/intllib/tools/xgettext.sh init.lua
