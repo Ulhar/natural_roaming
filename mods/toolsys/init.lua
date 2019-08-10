@@ -23,9 +23,18 @@ end
 
 local function makeCombo(handle, head)
 	local Handle, Head = handle.name:split(':'), head.name:split(':')
+	
 	local tc = table.copy(head.tool_capabilities)
 	for key, val in pairs(tc.groupcaps) do
 		val.uses = round((val.uses + handle.uses) / 2)
+	end
+	
+	local groups = {not_in_creative_inventory = 1}
+	for key, val in pairs(handle.groups or {}) do
+		groups[key] = val
+	end
+	for key, val in pairs(head.groups or {}) do
+		groups[key] = val
 	end
 	
 	local Name = "toolsys:" .. Handle[2] .. "_FROM_" .. Handle[1] .. "_PLUS_" .. Head[2] .. "_FROM_" .. Head[1]
@@ -34,6 +43,7 @@ local function makeCombo(handle, head)
 		tool_capabilities = tc,
 		description = get_definition(handle.name).description .. " + " .. get_definition(head.name).description,
 		inventory_image = "(" .. get_definition(handle.name).inventory_image .. ")^(" .. get_definition(head.name).inventory_image .. ")",
+		groups = groups,
 		on_use = head.on_use
 	})
 	
@@ -55,7 +65,7 @@ end
 -- [ ts.register_handle(name, def) ]
 -- Register an item as a handle
 -- [name] The name of the item to register as a handle.
--- [def] Handle definition. Defines uses
+-- [def] Handle definition. Defines uses and some groups (note that toolhead groups have priority)
 function ts.register_handle(name, def)
 	def.name = name
 	ts.registered_handles[name] = def
@@ -68,7 +78,7 @@ end
 -- [ ts.register_toolhead(name, def) ]
 -- Register an item as a toolhead
 -- [name] The name of the item to register as a toolhead.
--- [def] Handle definition. Defines tool_capabilities. on_use can also be defined if you so wish.
+-- [def] Handle definition. Defines tool_capabilities and groups. on_use can also be defined if you so wish.
 function ts.register_toolhead(name, def)
 	def.name = name
 	ts.registered_toolheads[name] = def
@@ -77,6 +87,9 @@ function ts.register_toolhead(name, def)
 		makeCombo(handle, head)
 	end
 end
+
+creative.register_tab(  "ts_handles",   "Handles",   ts.registered_handles)
+creative.register_tab("ts_toolheads", "Toolheads", ts.registered_toolheads)
 
 dofile('recipes.lua')
 dofile('builtin_tools.lua')

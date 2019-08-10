@@ -139,6 +139,14 @@ minetest.register_node("default:snow", {
 	groups = {snappy = 3, crumbly = 3}
 })
 
+minetest.register_node("default:ice", {
+	description = S("Ice"),
+	tiles = {"default_ice.png"},
+	groups = {slippery = 1, dig_immediate = 2},
+	paramtype = "light",
+	alpha = 200
+})
+
 minetest.register_node("default:dirt", {
 	description = S("Dirt"),
 	tiles = {"default_dirt.png"},

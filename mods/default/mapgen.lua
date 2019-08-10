@@ -30,7 +30,7 @@ b({
 	depth_riverbed = 2,
 	--  ^ Node placed under river water and thickness of this layer.
 	y_min = 1,
-	y_max = 15000,
+	y_max = 20000,
 	--  ^ Lower and upper limits for biome.
 	vertical_blend = 8,
 	--  ^ Vertical distance in nodes above 'y_max' over which the biome will
@@ -50,7 +50,7 @@ b({
 	name = "snow_plains",
 	node_dust = "",
 	--  ^ Node dropped onto upper surface after all else is generated.
-	node_top = "default:grass",
+	node_top = "default:snow",
 	depth_top = 1,
 	--  ^ Node forming surface layer of biome and thickness of this layer.
 	node_filler = "default:dirt",
@@ -59,7 +59,7 @@ b({
 	node_stone = "default:stone",
 	--  ^ Node that replaces all stone nodes between roughly y_min and y_max.
 	node_water_top = "default:ice",
-	depth_water_top = 1,
+	depth_water_top = 2,
 	--  ^ Node forming a surface layer in seawater with the defined thickness.
 	node_water = "default:water",
 	--  ^ Node that replaces all seawater nodes not in the defined surface layer.

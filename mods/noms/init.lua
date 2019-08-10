@@ -3,9 +3,13 @@ noms = {
 	register_food = function(name, def)
 		local def = table.copy(def)
 		def.on_use = minetest.item_eat(def._gain, def._replace_with)
+		noms.registered_foods[name] = def
 		minetest.register_craftitem(name, def)
-	end
+	end,
+	registered_foods = {},
 }
+
+local registered_foods = noms.registered_foods
 
 -- I prefer relative paths
 local function dofile(filename)
@@ -106,5 +110,7 @@ end)
 minetest.register_on_respawnplayer(function(player)
 	set_hunger_of(player, 20)
 end)
+
+creative.register_tab("noms_food", "Food", registered_foods)
 
 dofile("builtin_food.lua")

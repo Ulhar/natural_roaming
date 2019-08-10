@@ -92,5 +92,3 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		n.set_tab(player, tonumber(fields.sys_tabs))
 	end
 end)
-
-os.remove(MP .. "/locale")
