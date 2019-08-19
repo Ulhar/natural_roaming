@@ -37,12 +37,12 @@ for _, C in ipairs({"Red", "Green", "Blue", "Yellow", "Gray"}) do
 	})
 end
 
-local __s = "default_gold-block.png"
-local __f = __s .. "^default_golden-clock.png"
+local __s = "default_gold_block.png"
+local __f = __s .. "^default_golden_clock.png"
 minetest.register_node("default:golden_clock", {
 	description = tooltip(S("Golden Clock"), S("after placing, right-click to set the time to 7:30")),
-	inventory_image = "default_golden-clock.png",
-	wield_image = "default_golden-clock.png",
+	inventory_image = "default_golden_clock.png",
+	wield_image = "default_golden_clock.png",
 	tiles = {__f, __s, __s, __s, __s, __s},
 	on_rightclick = function(pos, node, player, itemstack, pointed_thing)
 		minetest.set_timeofday(730 / 2400)
