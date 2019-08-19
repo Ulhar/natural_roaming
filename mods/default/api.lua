@@ -95,3 +95,12 @@ function default.register_rock(name, def)
 	end
 	minetest.register_node(name, def)
 end
+
+-- This is here for compatibility reasons...
+function default.get_hotbar_bg(x,y)
+	local out = ""
+	for i=0,7,1 do
+		out = out .."image["..x+i..","..y..";1,1;gui_hb_bg.png]"
+	end
+	return out
+end
