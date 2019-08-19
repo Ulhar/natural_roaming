@@ -6,7 +6,7 @@ local function init_creative_cache(items)
 	local i_cache = inventory_cache[items]
 
 	for name, def in pairs(items) do
-		if (def.groups or {}).not_in_creative_inventory ~= 1 and
+		if def.groups.not_in_creative_inventory ~= 1 and
 				def.description and def.description ~= "" then
 			i_cache[name] = def
 		end
@@ -108,8 +108,8 @@ function creative.register_tab(name, title, items)
 				[[
 					image[4.06,3.4;0.8,0.8;creative_trash_icon.png]
 					listcolors[#00000069;#5A5A5A;#141318;#30434C;#FFF]
-					list[current_player;main;0.0,4.7;5,1;]
-					list[current_player;main;0.5,5.7;7,4;5]
+					list[current_player;main;0,4.7;8,1;]
+					list[current_player;main;0,5.85;8,3;8]
 					list[detached:creative_trash;main;4,3.3;1,1;]
 					listring[]
 					image_button[5.4,3.25;0.8,0.8;creative_prev_icon.png;creative_prev;]
@@ -126,7 +126,7 @@ function creative.register_tab(name, title, items)
 				"field[0.3,3.5;2.2,1;creative_filter;;" .. minetest.formspec_escape(inv.filter) .. "]" ..
 				"listring[detached:creative_" .. player_name .. ";main]" ..
 				"list[detached:creative_" .. player_name .. ";main;0,0;8,3;" .. tostring(start_i) .. "]" ..
-				creative.formspec_add, false)
+				default.get_hotbar_bg(0,4.7) .. creative.formspec_add, false)
 		end,
 		on_enter = function(self, player, context)
 			local player_name = player:get_player_name()
