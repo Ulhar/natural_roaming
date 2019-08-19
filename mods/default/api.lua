@@ -27,9 +27,10 @@ function default.tooltip(i, t, c)
 end
 
 -- Registers a node that can be climbed from adjacent nodes
--- /!\ you can't use the on_punch, on_construct or on_destruct functions
+-- /!\ I don't know if any on_punch callbacks registered for these will actually work
 function default.register_rock(name, def)
 	def.groups.rock_climbing_mechanics = 1
+	local old_construct, old_destruct, old_punch = def.on_construct, def.on_destruct, def.on_punch
 	def.on_construct = function(pos)
 		for _, val in ipairs(check_these) do
 			local pos = vector.add(val, pos)
@@ -37,6 +38,10 @@ function default.register_rock(name, def)
 			if node.name == "air" then
 				minetest.set_node(pos, {name = "default:CLIMBABLE_AIR"})
 			end
+		end
+		
+		if type(old_construct) == "function" then
+			old_construct(pos)
 		end
 	end
 	def.on_destruct = function(_pos)
@@ -68,6 +73,10 @@ function default.register_rock(name, def)
 				minetest.set_node(pos, {name = del and 'air' or "default:CLIMBABLE_AIR"})
 			end
 		end
+		
+		if type(old_destruct) == "function" then
+			old_destruct(pos)
+		end
 	end
 	def.on_punch = function(pos, ...)
 		for _, val in ipairs(check_these) do
@@ -77,7 +86,12 @@ function default.register_rock(name, def)
 				minetest.set_node(pos, {name = "default:CLIMBABLE_AIR"})
 			end
 		end
+		
+		if type(old_punch) == "function" then
+			old_punch(pos)
+		else
 		minetest.node_punch(pos, ...)
+		end
 	end
 	minetest.register_node(name, def)
 end
