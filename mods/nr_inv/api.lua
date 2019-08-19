@@ -57,18 +57,15 @@ end
 
 -- this also sets up inventories
 minetest.register_on_joinplayer(function(player)
-	player:hud_set_hotbar_itemcount(5)
+	player:hud_set_hotbar_itemcount(8)
 	player:hud_set_hotbar_image("gui_hotbar.png")
 	player:hud_set_hotbar_selected_image("gui_hotbar_selected.png")
-	--player:hud_set_hotbar_image("gui_hotbar.png^[multiply:#0000ff")
-	--player:hud_set_hotbar_selected_image("gui_hotbar_selected.png^[multiply:#ffaa00")
 	player:set_eye_offset(vector.new(0, 0, 0), vector.new(-10, 0, 0))
 	
 	local inv = player:get_inventory()
-	inv:set_size( "main", 25)
+	inv:set_size( "main", 32)
 	inv:set_size("armor",  5)
 	inv:set_size("coins",  5)
-	inv:set_size( "gear",  5)
 	
 	mem[player] = {page = 1}
 	n.refresh(player)

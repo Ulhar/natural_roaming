@@ -14,28 +14,28 @@ local S, NS = dofile(MP.."/3rd-party/intllib.lua")
 
 minetest.register_craftitem('default:platinum_ingot', {
 	description = S("Platinum Ingot"),
-	inventory_image = 'default_platinum-ingot.png'
+	inventory_image = 'default_platinum_ingot.png'
 })
 
 minetest.register_craftitem('default:steel_ingot', {
 	description = S("Steel Ingot"),
-	inventory_image = 'default_steel-ingot.png'
+	inventory_image = 'default_steel_ingot.png'
 })
 
 
 minetest.register_craftitem('default:platinum_rod', {
 	description = S("Platinum Rod"),
-	inventory_image = 'default_platinum-rod.png'
+	inventory_image = 'default_platinum_rod.png'
 })
 
 minetest.register_craftitem('default:steel_rod', {
 	description = S("Steel Rod"),
-	inventory_image = 'default_steel-rod.png'
+	inventory_image = 'default_steel_rod.png'
 })
 
 minetest.register_craftitem('default:wood_rod', {
 	description = S("Wood Rod"),
-	inventory_image = 'default_wood-rod.png'
+	inventory_image = 'default_wood_rod.png'
 })
 
 minetest.register_craftitem('default:string', {
@@ -58,10 +58,10 @@ minetest.register_craftitem('default:paracord', {
 
 minetest.register_craftitem('default:rope_coil', {
 	description = S("Rope Coil"),
-	inventory_image = 'default_rope-coil.png'
+	inventory_image = 'default_rope_coil.png'
 })
 
 minetest.register_craftitem('default:paracord_bracelet', {
 	description = S("Paracord Bracelet"),
-	inventory_image = 'default_rope-coil.png'
+	inventory_image = 'default_rope_coil.png'
 })

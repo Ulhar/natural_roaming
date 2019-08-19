@@ -75,10 +75,10 @@ local function register_ladder(name, display, image, groups, coloring, on_place)
 	})
 end
 
-register_ladder("default:platinum_ladder", S("Platinum Ladder"), "default_platinum-ladder.png", {cracky = 3})
-register_ladder(   "default:steel_ladder",    S("Steel Ladder"),    "default_steel-ladder.png", {cracky = 3})
-register_ladder(    "default:wood_ladder",     S("Wood Ladder"),     "default_wood-ladder.png", {snappy = 2})
-register_ladder(    "default:rope_ladder",     S("Rope Ladder"),     "default_rope-ladder.png", {dig_immediate = 2}, nil, function(itemstack, placer, pointed)
+register_ladder("default:platinum_ladder", S("Platinum Ladder"), "default_ladder_platinum.png", {cracky = 3})
+register_ladder(   "default:steel_ladder",    S("Steel Ladder"),    "default_ladder_steel.png", {cracky = 3})
+register_ladder(    "default:wood_ladder",     S("Wood Ladder"),     "default_ladder_wood.png", {snappy = 2})
+register_ladder(    "default:rope_ladder",     S("Rope Ladder"),     "default_ladder_rope.png", {dig_immediate = 2}, nil, function(itemstack, placer, pointed)
 	local pointed_node = minetest.get_node(pointed.under)
 	local extended_coords = vector.subtract(pointed.under, vector.new(0, 1, 0))
 	
@@ -100,12 +100,12 @@ end
 minetest.register_node("default:log", {
 	description = S("Log"),
 	tiles = {
-		"default_log-END.png",
-		"default_log-END.png",
-		"default_log-SIDE.png",
-		"default_log-SIDE.png",
-		"default_log-SIDE.png",
-		"default_log-SIDE.png"
+		"default_tree_top.png",
+		"default_tree_top.png",
+		"default_tree.png",
+		"default_tree.png",
+		"default_tree.png",
+		"default_tree.png"
 	},
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_and_place,
@@ -162,7 +162,7 @@ minetest.register_node("default:stone", {
 
 minetest.register_node("default:cobble", {
 	description = S("Cobble"),
-	tiles = {"default_cobblestone.png"},
+	tiles = {"default_cobble.png"},
 	groups = {cracky = 3}
 })
 
@@ -174,7 +174,7 @@ minetest.register_node("default:gravel", {
 
 default.register_rock("default:diorite", {
 	description = tooltip(S("Diorite"), S("Can be climbed if you have a Climbing Axe equipped")),
-	tiles = {"default_climbable-stone.png"},
+	tiles = {"default_climbable_stone.png"},
 	groups = {cracky = 3}
 })
 
@@ -216,7 +216,7 @@ minetest.register_node("default:crate", {
 
 minetest.register_node("default:planks", {
 	description = S("Planks"),
-	tiles = {"default_planks.png"},
+	tiles = {"default_wood.png"},
 	groups = {wood = 1, planks = 1, choppy = 3},
 })
 
@@ -225,7 +225,7 @@ minetest.register_node("default:plank_slab", {
 	paramtype = "light",
 	description = S("Plank Slab"),
 	tiles = {{
-		name = "default_planks.png",
+		name = "default_wood.png",
 		backface_culling = true,
 		align_style = "world"
 	}},
@@ -241,7 +241,7 @@ minetest.register_node("default:plank_platform", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	description = S("Plank Platform"),
-	tiles = {"default_planks.png"},
+	tiles = {"default_wood.png"},
 	groups = {choppy = 3},
 	node_box = {
 		-- A fixed box (or boxes) (facedir param2 is used, if applicable)
@@ -256,7 +256,7 @@ minetest.register_node("default:plank_stairs", {
 	paramtype2 = "facedir",
 	description = S("Plank Stairs"),
 	tiles = {{
-		name = "default_planks.png",
+		name = "default_wood.png",
 		backface_culling = true,
 		align_style = "world"
 	}},
@@ -278,7 +278,7 @@ minetest.register_node("default:wooden_pole", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	description = S("Wooden Pole"),
-	tiles = {"default_planks.png"},
+	tiles = {"default_wood.png"},
 	groups = {choppy = 3},
 	node_box = {
 		-- A fixed box (or boxes) (facedir param2 is used, if applicable)
@@ -314,8 +314,8 @@ minetest.register_node("default:lantern", {
 		}
 	},
 	tiles = {
-		"default_lantern-top.png",
-		"default_lantern-top.png",
+		"default_lantern_top.png",
+		"default_lantern_top.png",
 		"default_lantern.png",
 		"default_lantern.png",
 		"default_lantern.png",
@@ -334,7 +334,7 @@ minetest.register_node("default:glass", {
 
 minetest.register_node("default:framed_glass", {
 	description = S("Framed Glass"),
-	tiles = {"default_framed-glass.png"},
+	tiles = {"default_framed_glass.png"},
 	drawtype = "glasslike",
 	paramtype = "light",
 	groups = {dig_immediate = 2}
