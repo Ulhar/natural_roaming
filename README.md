@@ -10,6 +10,8 @@ A sandbox game written in **[Lua][]**, using the **[Minetest][]** engine.
 # Downloads
 
 Right now, the main way to download this game is to download the ZIP from [Github][NR github repo].  
+Alternatively, you can do this in your Minetest games directory (if you have Git installed):  
+`git clone https://github.com/TheBluePineapple/natural_roaming.git`  
 If you know someone who has this game, you can also ask them for a copy.  
 (An itch.io page is planned, but not available until this game is ready.)  
 
