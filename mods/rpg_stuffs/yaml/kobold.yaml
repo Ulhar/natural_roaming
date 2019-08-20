@@ -1,0 +1,49 @@
+---
+    title: kobold
+    
+    color defaults: # the default colors when using this race
+        scales: red
+        eyes: yellow
+    
+    front colors:
+        scales:
+            head bit:
+                x:      3
+                y:      3
+                width:  8
+                height: 4
+        eyes:
+            right eye:
+                x:      4
+                y:      6
+                width:  1
+                height: 4
+            left eye:
+                x:      4
+                y:      6
+                width:  1
+                height: 4
+    back colors:
+        scales:
+            head bit:
+                x:      3
+                y:      3
+                width:  8
+                height: 4
+    
+    special physics:
+        speed: 1.1
+        jump:  1.1
+    
+    special properties:
+        hp_max: 18
+        eye_height: 1.5
+        weight: 4.75
+        collisionbox:
+          - -0.299
+          - 0.0
+          - -0.299
+          - 0.299
+          - 1.7
+          - 0.299
+...
