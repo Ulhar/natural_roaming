@@ -1,0 +1,1 @@
+This mod overides the builtin HUD such that you don't see them while using hudbars. That is all.

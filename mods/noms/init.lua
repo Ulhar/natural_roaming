@@ -111,6 +111,6 @@ minetest.register_on_respawnplayer(function(player)
 	set_hunger_of(player, 20)
 end)
 
-creative.register_tab("noms_food", "Food", registered_foods)
+--creative.register_tab("noms_food", "Food", registered_foods)
 
 dofile("builtin_food.lua")

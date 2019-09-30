@@ -33,6 +33,11 @@ minetest.register_craftitem('default:steel_rod', {
 	inventory_image = 'default_steel_rod.png'
 })
 
+minetest.register_craftitem("default:twig", {
+	description = S("Twig"),
+	inventory_image = "default_stick.png"
+})
+
 minetest.register_craftitem('default:wood_rod', {
 	description = S("Wood Rod"),
 	inventory_image = 'default_wood_rod.png'

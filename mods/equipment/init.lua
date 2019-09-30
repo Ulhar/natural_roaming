@@ -11,18 +11,6 @@ dofile("builtin_gear.lua")
 minetest.register_on_joinplayer(function(player)
 	local inv = player:get_inventory()
 	inv:set_size("gear", 5)
-	
-	player:hud_add({
-		hud_elem_type = "inventory", -- see HUD element types
-	--  ^ type of HUD element, can be either of "image", "text", "statbar", or "inventory"
-		position = {x=0, y=0},
-	--  ^ Left corner position of element
-		name = "Gear display",
-		text = "gear",
-		number = 5,
-		item = 0,
-		direction = 0
-	})
 end)
 
 minetest.register_globalstep(function(dtime)

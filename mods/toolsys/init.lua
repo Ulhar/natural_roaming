@@ -88,8 +88,8 @@ function ts.register_toolhead(name, def)
 	end
 end
 
-creative.register_tab(  "ts_handles",   "Handles",   ts.registered_handles)
-creative.register_tab("ts_toolheads", "Toolheads", ts.registered_toolheads)
+--creative.register_tab(  "ts_handles",   "Handles",   ts.registered_handles)
+--creative.register_tab("ts_toolheads", "Toolheads", ts.registered_toolheads)
 
 dofile('recipes.lua')
 dofile('builtin_tools.lua')

@@ -12,6 +12,20 @@ end
 
 dofile("api.lua")
 
+-- Register tabs for our main inventory components
+sfinv.register_page("nr_inv:gear", {
+	title = "Gear",
+	get = function(self, player, context)
+		return sfinv.make_formspec(player, context, [[
+				list[current_player;armor;1.5,0.5;5,1;]
+				label[1.25,0;Defense]
+				list[current_player;gear;1.5,2.5;5,1;]
+				label[1.25,2;Mobility]
+			]], true)
+	end
+})
+
+-- to be removed... eventually
 local basic_inv = [[
 list[current_player;main;0,0;5,5;]
 container[6, 0]
@@ -26,10 +40,3 @@ list[current_player;coins;0,6.25;5,1;]
 list[current_player;gear;6.0,5.25;3,1;]
 list[current_player;gear;6.5,6.25;2,1;3]
 ]]
-
-nr_inv.register_tab("nr_inv:home", {
-	content = basic_inv,
-	display = S("Inventory"),
-	width  = 9,
-	height = 7
-})

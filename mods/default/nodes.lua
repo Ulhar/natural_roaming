@@ -115,14 +115,29 @@ minetest.register_node("default:log", {
 minetest.register_node("default:leaves", {
 	description = S("Leaves"),
 	tiles = {"default_leaves.png"},
-	drawtype = "glasslike",
-	waving = 2,
+	special_tiles = {"default_leaves_simple.png"},
+	drawtype = "allfaces_optional",
+	waving = 1,
+	
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				items = {"default:twig"},  -- Items to drop.
+				rarity = 3,  -- Probability of dropping is 1 / rarity.
+			},
+			{
+				items = {"default:leaves"},  -- Items to drop.
+				rarity = 1,  -- Probability of dropping is 1 / rarity.
+			}
+		}
+	},
 	
 	walkable = false,
 	climbable = true,
 	
 	paramtype = "light",
-	sunlight_propagates = false,
+	sunlight_propagates = true,
 	on_place = minetest.rotate_and_place,
 	groups = {leaf = 1, snappy = 3},
 })

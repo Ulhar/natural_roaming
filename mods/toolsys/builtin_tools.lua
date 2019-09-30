@@ -36,13 +36,13 @@ minetest.register_craftitem("toolsys:platinum_axe", {
 })
 ts.register_toolhead("toolsys:platinum_axe", {
 	tool_capabilities = {
-        full_punch_interval = 2.5,
-        max_drop_level = 0,
-        groupcaps = {
-            choppy = {times = {[1] = 1.75, [2] = 1.25, [3] = 0.75}, uses = 99, maxlevel = 1},
-        },
-        damage_groups = {fleshy = 7},
-    }
+		full_punch_interval = 2.5,
+		max_drop_level = 0,
+		groupcaps = {
+			choppy = {times = {[1] = 1.75, [2] = 1.25, [3] = 0.75}, uses = 99, maxlevel = 1},
+		},
+		damage_groups = {fleshy = 7},
+	}
 })
 
 minetest.register_craftitem("toolsys:platinum_spade", {
@@ -52,13 +52,13 @@ minetest.register_craftitem("toolsys:platinum_spade", {
 })
 ts.register_toolhead("toolsys:platinum_spade", {
 	tool_capabilities = {
-        full_punch_interval = 5,
-        max_drop_level = 0,
-        groupcaps = {
-            crumbly = {times = {[1] = 1.25, [2] = 0.75, [3] = 0.25}, uses = 99, maxlevel = 1},
-        },
-        damage_groups = {fleshy = 7},
-    }
+		full_punch_interval = 5,
+		max_drop_level = 0,
+		groupcaps = {
+			crumbly = {times = {[1] = 1.25, [2] = 0.75, [3] = 0.25}, uses = 99, maxlevel = 1},
+		},
+		damage_groups = {fleshy = 7},
+	}
 })
 
 minetest.register_craftitem("toolsys:platinum_pick", {
@@ -68,11 +68,27 @@ minetest.register_craftitem("toolsys:platinum_pick", {
 })
 ts.register_toolhead("toolsys:platinum_pick", {
 	tool_capabilities = {
-        full_punch_interval = 3,
-        max_drop_level = 0,
-        groupcaps = {
-            cracky = {times = {[1] = 1.5, [2] = 1.0, [3] = 0.5}, uses = 99, maxlevel = 1},
-        },
-        damage_groups = {fleshy = 7},
-    }
+		full_punch_interval = 3,
+		max_drop_level = 0,
+		groupcaps = {
+			cracky = {times = {[1] = 1.5, [2] = 1.0, [3] = 0.5}, uses = 99, maxlevel = 1},
+		},
+		damage_groups = {fleshy = 7},
+	}
+})
+
+minetest.register_craftitem("toolsys:wooden_pick", {
+	stack_max = 33,
+	description = "Wooden Pick Head",
+	inventory_image = "toolsys_wooden_pick.png"
+})
+ts.register_toolhead("toolsys:wooden_pick", {
+	tool_capabilities = {
+		full_punch_interval = 4.5,
+		max_drop_level = 0,
+		groupcaps = {
+			cracky = {times = {[1] = 2.25, [2] = 1.5, [3] = 0.75}, uses = 33, maxlevel = 0},
+		},
+		damage_groups = {fleshy = 7},
+	}
 })
